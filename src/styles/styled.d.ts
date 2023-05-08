@@ -1,13 +1,9 @@
 import 'styled-components';
 
+import Theme from './Theme'
+
+export type ITheme = typeof Theme
+
 declare module 'styled-components' {
-  export interface DefaultTheme {
-    colors: any;
-    breakpoints: {
-      mobile: string;
-      tablet: string;
-      wide: string;
-      extraWide: string;
-    };
-  }
+  export interface DefaultTheme extends ITheme {}
 }
