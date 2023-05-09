@@ -14,6 +14,8 @@ export const theme = {
       11: '#A09FA6',
       12: '#EDEDEF'
     },
+    primary: '#0000FF',
+    secondary: '#FFFFFF',
   },
   breakpoints: {
     mobile: 'only screen and (max-width: 769px)',
