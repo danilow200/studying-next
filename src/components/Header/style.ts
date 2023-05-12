@@ -9,12 +9,16 @@ export const Container = styled.div`
     /* background: blue; */
     width: 95%;
     margin: 10px auto;
+    border: solid rgba(0, 0, 0, 0.35) 3px;
     border-radius: 999px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    transition: ease 300ms;
 `;
 
 export const Login = styled.button`
-    color: black;
+    color: white;
     border: none;
     background: none;
     cursor: pointer;
@@ -27,3 +31,12 @@ export const Login = styled.button`
         transition: ease 300ms;
     }
 `;
+
+export const Menu = styled.div`
+    position: absolute;
+    background-color: #fff;
+    width: 95%;
+    height: 200px;
+    right: 30px;
+    top: 50px;
+`

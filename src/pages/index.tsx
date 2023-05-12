@@ -10,7 +10,7 @@ const Container = styled.div`
   height: 79vh;
   margin: 10px auto;
   padding: 20px;
-  background: ${(props) => props.theme.colors.gray[8]};
+  /* background: ${(props) => props.theme.colors.gray[8]}; */
 `;
 
 export default function Home() {

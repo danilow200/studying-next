@@ -8,6 +8,11 @@ body {
   margin: 0;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* background-color: "#FAFFEF"; */
+  background: url('/BG.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 a {
@@ -25,7 +30,7 @@ a {
   }
   body {
     color: black;
-    background: white;
+    /* background: white; */
   }
 }
 `
