@@ -1,19 +1,22 @@
 import Image from "next/image";
-import { Container, Hamburguer, Menu } from "./style";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import { theme } from "../../styles/Theme";
+import { Container } from "./style";
+import React, { useRef, useState } from 'react';
+import { Burger } from "./Burger";
+import { Menu } from "./Menu";
+import { useOnClickOutside } from '../../hook/hook';
 
 export const Header = () => {
-    const [isSelected, setIsSelected] = useState(false)
-    const isMobile = theme.breakpoints.mobile
+    const [open, setOpen] = useState(false);
+    const node = useRef<HTMLDivElement>();
+    useOnClickOutside(node, () => setOpen(false));
 
     return <>
         <Container>
             <Image src="/favicon.ico" width={50} height={50} alt={""} />
-            <Hamburguer onClick={() => {setIsSelected(!isSelected)}}><FontAwesomeIcon icon={faBars} /></Hamburguer>
-            {isSelected && <Menu></Menu>}
+            <div ref={node}>
+                <Burger open={open} setOpen={setOpen} />
+                <Menu open={open} setOpen={setOpen} />
+            </div>
         </Container>
     </>
 };
