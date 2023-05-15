@@ -33,5 +33,27 @@ a {
     /* background: white; */
   }
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0,0,255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,255, 0.5);
+  transition: ease 300ms;
+  border-radius: 999px;
+  transition: ease 300ms;
+  :hover {
+    background: rgba(0,0,255, 1);
+  }
+}
 `
 
