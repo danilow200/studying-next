@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+type ContainerProps = {
+    open: boolean;
+  };
+
+export const Container = styled.div<ContainerProps>`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,7 +16,7 @@ export const Container = styled.div`
     border: solid rgba(0, 0, 0, 0.35) 3px;
     border-radius: 999px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: ${({ open }) => open ? '' : 'blur(10px)'};
     position: relative;
     transition: ease 300ms;
 `;

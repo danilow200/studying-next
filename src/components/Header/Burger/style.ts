@@ -18,9 +18,14 @@ export const StyledBurger = styled.button<StyledBurgerProps>`
   cursor: pointer;
   padding: 0;
   z-index: 10;
+  display: none;
   
   &:focus {
     outline: none;
+  }
+
+  @media ${(props) => props.theme.breakpoints.mobile} {
+    display: flex;
   }
   
   div {

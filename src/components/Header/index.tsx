@@ -11,7 +11,7 @@ export const Header = () => {
     useOnClickOutside(node, () => setOpen(false));
 
     return <>
-        <Container>
+        <Container open={open}>
             <Image src="/favicon.ico" width={50} height={50} alt={""} />
             <div ref={node}>
                 <Burger open={open} setOpen={setOpen} />

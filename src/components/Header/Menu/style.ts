@@ -8,7 +8,8 @@ export const StyledMenu = styled.nav<StyledMenuProps>`
   display: none;
   flex-direction: column;
   justify-content: center;
-  background: ${({ theme }) => theme.colors.primary};
+  background: rgba(0, 0, 255, .7);
+  backdrop-filter: blur(5px);
   height: 100vh;
   text-align: left;
   padding: 2rem;
@@ -21,7 +22,15 @@ export const StyledMenu = styled.nav<StyledMenuProps>`
   @media ${(props) => props.theme.breakpoints.mobile} {
     width: 100%;
     display: flex;
-    left: ${({ open }) => open ? '0' : '-50px'};;
+    left: ${({ open }) => open ? '0' : '-50px'};
+  }
+
+  .underline {
+    width: 100%;
+    height: 1px;
+    border-radius: 999px;
+    background: rgba(0,212,255,.5);
+    background: linear-gradient(90deg, rgba(0,212,255,.3) 0%, rgba(9,9,121,1) 50%, rgba(0,212,255,.3) 100%);
   }
 
   a {
@@ -39,7 +48,7 @@ export const StyledMenu = styled.nav<StyledMenuProps>`
       text-align: center;
     }
 
-    &:hover {
+    :hover {
       color: ${({ theme }) => theme.colors.primaryHover};
     }
   }
