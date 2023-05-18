@@ -12,8 +12,8 @@ export const Header = () => {
 
     return <>
         <Container open={open}>
-            <Image src="/favicon.ico" width={50} height={50} alt={""} />
-            <div ref={node}>
+            <Image src="/logo.png" width={50} height={50} alt={""} />
+            <div>
                 <Burger open={open} setOpen={setOpen} />
                 <Menu open={open} setOpen={setOpen} />
             </div>

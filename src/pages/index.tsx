@@ -8,7 +8,7 @@ const Container = styled.div`
   gap: 10px;
   width: 95%;
   height: 79vh;
-  margin: 10px auto;
+  margin: 20px auto;
   padding: 20px;
   /* background: ${(props) => props.theme.colors.gray[8]}; */
 `;

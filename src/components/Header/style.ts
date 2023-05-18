@@ -1,57 +1,50 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 type ContainerProps = {
     open: boolean;
   };
 
-export const Container = styled.div<ContainerProps>`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    padding-right: 30px;
-    /* background: blue; */
-    width: 95%;
-    margin: 10px auto;
-    border: solid rgba(0, 0, 0, 0.35) 3px;
-    border-radius: 999px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    backdrop-filter: ${({ open }) => open ? '' : 'blur(10px)'};
-    position: relative;
-    transition: ease 300ms;
-`;
-
-export const Hamburguer = styled.button`
-    display: none;
-    color: white;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 700;
-    transition: ease 300ms;
-    @media ${(props) => props.theme.breakpoints.mobile} {
-        display:flex;
-    }
-
-    :hover {
-        text-shadow: rgba(0, 0, 0, 0.75) 0px 0px 15px;
-        transition: ease 300ms;
-    }
-`;
-
-export const Menu = styled.div`
-    display: none;
-    position: absolute;
-    background-color: rgba(0, 0, 255, 0.5);
-    backdrop-filter: blur(10px);
-    width: 100%;
-    height: 200px;
-    right: 0;
-    top: 50px;
-    border-radius: 20px;
-    transition: ease-in-out 300ms;
-    @media ${(props) => props.theme.breakpoints.mobile} {
-        display:flex;
-    }
+const pulsate = keyframes`
+  100% {
+    box-shadow:
+      0 0 1px #fff,
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 10px #bc13fe,
+      0 0 19px #bc13fe,
+      0 0 20px #bc13fe,
+      0 0 40px #bc13fe,
+      0 0 80px #bc13fe;
+  }
+  0% {
+    box-shadow:
+      0 0 1px #fff,
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #bc13fe,
+      0 0 8px #bc13fe,
+      0 0 10px #bc13fe,
+      0 0 45px #bc13fe,
+      0 0 60px #bc13fe;
+  }
 `
+
+export const Container = styled.div<ContainerProps>`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  padding-right: 30px;
+  /* background: #311465; */
+  background: linear-gradient(180deg, #000, #311465);
+  width: 100%;
+  margin: 0px auto;
+  /* border-radius: 999px; */
+  /* backdrop-filter: ${({ open }) => open ? '' : 'blur(10px)'}; */
+  /* box-shadow: inset 0px -15px 20px -15px #bc13fe;  */
+  position: relative;
+  transition: ease 300ms;
+  animation: ${pulsate} 1.5s infinite alternate;  
+  border-bottom: 0.2rem solid #fff;
+`;
+
